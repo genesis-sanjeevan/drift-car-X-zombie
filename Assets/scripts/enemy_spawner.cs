@@ -9,6 +9,7 @@ public class enemy_spawner : MonoBehaviour
     [SerializeField] Transform Car;
     [SerializeField] GameObject enemy;
     [SerializeField] float Max_Timer;
+    [SerializeField] GameObject endgame;
 
     GameObject enemy_Reference;
     private void Update()
@@ -22,20 +23,22 @@ public class enemy_spawner : MonoBehaviour
         }
     }
 
+
+
     public void EnemySpawner()
 
     {
 
 
-        int spawnPointX = Random.Range(-10, 10);
+        int spawnPointX = Random.Range(35, 44);
         int spawnPointY = Random.Range(2,2);
-        int spawnPointZ = Random.Range(-10, 10);
+        int spawnPointZ = Random.Range(-35, 55);
 
         Vector3 spawnPosition = new Vector3(spawnPointX, spawnPointY, spawnPointZ);
         enemy_Reference = Instantiate(enemy, spawnPosition, Quaternion.identity);
 
         enemy_Reference.GetComponent<enemy_follow>().Set_Car(Car);
-
+        enemy_Reference.GetComponent<enemy_follow>().set_endGame(endgame);
     }
   
 

@@ -8,6 +8,15 @@ TagManager:
   - Ground
   - Coin
   - Ground
+  - crate
+  - powers
+  - shield
+  - empty
+  - heal
+  - ring
+  - speed
+  - gun
+  - sheild icon
   layers:
   - Default
   - TransparentFX
@@ -17,12 +26,12 @@ TagManager:
   - UI
   - player
   - environment
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - crate
+  - Coin
+  - PP
+  - shield
+  - enemy
+  - ring
   - 
   - 
   - 

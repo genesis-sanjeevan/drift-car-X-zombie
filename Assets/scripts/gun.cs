@@ -7,8 +7,9 @@ public class gun : MonoBehaviour
 {
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
-    public float bulletSpeed = 10;
+    public float bulletSpeed = 100;
     public float Max_Timer;
+    public AudioSource shooting_audio;
 
     public float _Time;
 
@@ -24,6 +25,8 @@ public class gun : MonoBehaviour
 
         if (_Time >= Max_Timer)
         {
+            
+            //shooting_audio.Play();
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
             _Time = 0;

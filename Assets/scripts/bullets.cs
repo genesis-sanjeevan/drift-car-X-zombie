@@ -13,18 +13,13 @@ public class bullets : MonoBehaviour
         Destroy(gameObject,2f);
         
     }
-    private void Update()
-    {
-
-    }
-
-
+    
 
     void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.gameObject.tag == "enemy")
         {
-            print("enemy spotted");
+            
             Destroy(collision.gameObject);
 
             Destroy(gameObject);

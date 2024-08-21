@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
+
 
 public class enemy_follow : MonoBehaviour
 {
     Transform car;
     [SerializeField] NavMeshAgent enemy;
+    GameObject endGame;
+    
 
 
     void Update()
@@ -15,15 +19,20 @@ public class enemy_follow : MonoBehaviour
             enemy.SetDestination(car.position);
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag == "Player")
-        {
-            Destroy(collision.collider.gameObject);
-        }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "ring")
+        {
+
+            Destroy(gameObject);
+        }   
     }
 
+    public void set_endGame(GameObject endGame)
+    {
+        this.endGame = endGame;
+    }
     public void Set_Car(Transform Trans_car)
     {
         car = Trans_car;

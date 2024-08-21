@@ -1,0 +1,52 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class summascript : MonoBehaviour
+{
+    [SerializeField] GameObject swordPlayerPrefab;
+    [SerializeField] GameObject magicPlayerPrefab;
+    [SerializeField] GameObject gunPlayerPrefab;
+
+
+    void Start()
+    {
+        Instantiate(player("GunPlayer"));
+
+
+        bunjourney(1,2);
+    }
+
+    
+    void Update()
+    {
+        
+    }
+
+    public void bunjourney(int one, int two)
+    {
+        int three = one + two;
+        print(three);
+    }
+
+    public GameObject player(string tagName)
+    {
+        if(tagName == "SwordPlayer")
+        {
+            return swordPlayerPrefab;
+        }
+        else if (tagName == "MagicPlayer")
+        {
+            return magicPlayerPrefab;
+        }
+        else if (tagName == "GunPlayer")
+        {
+            return gunPlayerPrefab;
+        }
+        else
+        {
+            Debug.LogError("write a valid name");
+            return null;
+        }
+    }
+}
