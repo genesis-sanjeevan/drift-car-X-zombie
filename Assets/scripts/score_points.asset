@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: score_points
   m_EditorClassIdentifier: 
   current_level_score: 0
-  total_Score: 0
+  total_Score: 36
+  player: 0

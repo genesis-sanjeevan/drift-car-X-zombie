@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class enemy_spawner : MonoBehaviour
 { 
     private float _Time;
-    [SerializeField] Transform Car;
+    public Transform Car;
     [SerializeField] GameObject enemy;
     [SerializeField] float Max_Timer;
     [SerializeField] GameObject endgame;

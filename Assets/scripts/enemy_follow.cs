@@ -26,6 +26,7 @@ public class enemy_follow : MonoBehaviour
         {
 
             Destroy(gameObject);
+
         }   
     }
 

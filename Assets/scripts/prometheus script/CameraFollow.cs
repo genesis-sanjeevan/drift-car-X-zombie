@@ -13,10 +13,12 @@ public class CameraFollow : MonoBehaviour {
 	Vector3 initialCarPosition;
 	Vector3 absoluteInitCameraPosition;
 
+
 	void Start(){
 		initialCameraPosition = gameObject.transform.position;
 		initialCarPosition = carTransform.position;
 		absoluteInitCameraPosition = initialCameraPosition - initialCarPosition;
+		
 	}
 
 	void FixedUpdate()

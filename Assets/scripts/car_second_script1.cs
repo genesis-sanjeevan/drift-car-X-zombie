@@ -87,7 +87,7 @@ public class car_second_script1 : MonoBehaviour
             case "enemy":
                 print("boom");
                 damage();
-                break;
+            break;
         }
     }
 
