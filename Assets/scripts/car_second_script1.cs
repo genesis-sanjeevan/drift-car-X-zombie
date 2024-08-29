@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
 using Microlight.MicroBar;
+using UnityEngine.UI;
+using UnityEditor.UI;
 
 
 public class car_second_script1 : MonoBehaviour
@@ -20,7 +22,7 @@ public class car_second_script1 : MonoBehaviour
     public GameObject[] powers;
     [SerializeField] MicroBar health_Bar;
     public float time = 0f;
-    [SerializeField] GameObject mine;
+    
 
     
     [Header("icon_animation")]
@@ -59,8 +61,11 @@ public class car_second_script1 : MonoBehaviour
 
         if (HP == 0)
         {
-            Destroy(gameObject);
             endgame.SetActive(true);
+            gameObject.GetComponentInChildren<Renderer>().enabled = false;
+            gameObject.GetComponent<PrometeoCarController>().enabled = false;
+            Time.timeScale = 0f;
+            
         }
 
         shield_ani.SetBool("shield_off", true);
@@ -177,13 +182,13 @@ public class car_second_script1 : MonoBehaviour
     void Start()
     {
         health_Bar.Initialize(Max_Hp);
-        
+        Time.timeScale = 1.0f;
     }
 
 
     public void damage()
     {
-        HP -= 10f;
+        HP -= 20f;
     }
 
     public void heal()
@@ -195,15 +200,5 @@ public class car_second_script1 : MonoBehaviour
 
 
 
-    void bomb_spawn()
-    {
-        int spawnPointX = Random.Range(-40, 40);
-        int spawnPointY = Random.Range(2, 2);
-        int spawnPointZ = Random.Range(-40, 40);
-        Vector3 spawnPosition = new Vector3(spawnPointX, spawnPointY, spawnPointZ);
-        GameObject newMine =Instantiate(mine, spawnPosition, Quaternion.identity);
-        newMine.GetComponent<MeshRenderer>().enabled = true;
-        newMine.GetComponent<Collider>().enabled = true;
-
-    }
+    
 }

@@ -6,12 +6,11 @@ using TMPro;
 public class garage_coin_script : MonoBehaviour
 {
     public TextMeshProUGUI main_menu_coin_text;
+    public scoresave saved_score;
 
-    private void Start()
+    private void Update()
     {
-        
-        string txt = main_menu_coin_text.text;
-        gameObject.GetComponent<TextMeshProUGUI>().text = txt;
+        gameObject.GetComponent<TextMeshProUGUI>().text = saved_score.Total_Score.ToString();
 
     }
 }

@@ -8,6 +8,7 @@ public class scoresave : ScriptableObject
 {
     [SerializeField] int current_level_score;
     [SerializeField] int total_Score;
+    
     [SerializeField] Cars player;
     
 
@@ -21,6 +22,8 @@ public class scoresave : ScriptableObject
     }
 
 
+
+
     public void setCar(Cars newCar)
     {
         player = newCar;
@@ -31,6 +34,8 @@ public class scoresave : ScriptableObject
         return player;
     }
 }
+
+
 
 public enum Cars
 {

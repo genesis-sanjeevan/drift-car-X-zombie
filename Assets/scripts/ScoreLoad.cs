@@ -9,9 +9,15 @@ public class ScoreLoad : MonoBehaviour
 {
     public scoresave saved_score;
 
+
     private void Start()
     {
+        
         saved_score.score_Add();
+
+    }
+    private void Update()
+    {
         gameObject.GetComponent<TextMeshProUGUI>().text = saved_score.Total_Score.ToString();
     }
 
