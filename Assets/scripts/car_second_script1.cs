@@ -1,11 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 using Microlight.MicroBar;
-using UnityEngine.UI;
-using UnityEditor.UI;
 
 
 public class car_second_script1 : MonoBehaviour

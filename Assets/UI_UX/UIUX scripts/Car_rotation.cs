@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Car_rotation : MonoBehaviour
 {
@@ -20,61 +18,67 @@ public class Car_rotation : MonoBehaviour
     public GameObject LamboBuyButton;
     public GameObject teslaBuyButton;
 
-    
-
-
-    private void Update()
+    private void Start()
     {
-        
-       
-        
-    }
-
-
-    public void first_selection()
-    {
-        camera1.transform.position = new Vector3(-10, 3, -16.6f);
-        CarNametext.GetComponent<TextMeshProUGUI>().text = "the red car";
-        red_car_panel.SetActive(true);
-        white_car_panel.SetActive(false);
-        lambo_car_panel.SetActive(false);
-        tesla_car_panel.SetActive(false);
+        if(!scoresave.Car_white_locked) { Destroy(WhiteBuyButton); }
+        if(!scoresave.Car_lambo_locked) { Destroy(LamboBuyButton); }
+        if(!scoresave.Car_tesla_locked) { Destroy(teslaBuyButton); }
 
     }
 
-    public void second_selection()
+    public void SelectCar(int CarIndex)
     {
-        camera1.transform.position = new Vector3(0, 3, -16.6f);
-        CarNametext.GetComponent<TextMeshProUGUI>().text = "the fast car";
-        white_car_panel.SetActive(true);
-        red_car_panel.SetActive(false);
-        lambo_car_panel.SetActive(false);
-        tesla_car_panel.SetActive(false);
-    }
+        string txt = CarNametext.GetComponent<TextMeshProUGUI>().text;
 
-    public void third_selection()
-    {
-        camera1.transform.position = new Vector3(10, 3, -16.6f);
-        CarNametext.GetComponent<TextMeshProUGUI>().text = "lambar gambar";
-        lambo_car_panel.SetActive(true);
-        white_car_panel.SetActive(false);
-        red_car_panel.SetActive(false);
-        tesla_car_panel.SetActive(false);
-    }
+        switch (CarIndex)
+        {
+            case 0:
+                camera1.transform.position = new Vector3(-10, 3, -16.6f);
+                txt = "the red car";
+                red_car_panel.SetActive(true);
+                white_car_panel.SetActive(false);
+                lambo_car_panel.SetActive(false);
+                tesla_car_panel.SetActive(false);
+            break;
 
-    public void  forth_selection()
-    {
-        camera1.transform.position = new Vector3(20, 3, -16.6f);
-        CarNametext.GetComponent<TextMeshProUGUI>().text = "Coming Soon";
-        
-    }
-    public void fifth_selection()
-    {
-        camera1.transform.position = new Vector3(30, 3, -16.6f);
-        tesla_car_panel.SetActive(true);
-        white_car_panel.SetActive(false);
-        red_car_panel.SetActive(false);
-        lambo_car_panel.SetActive(false);
+            case 1:
+                camera1.transform.position = new Vector3(0, 3, -16.6f);
+                txt = "the fast car";
+                white_car_panel.SetActive(true);
+                red_car_panel.SetActive(false);
+                lambo_car_panel.SetActive(false);
+                tesla_car_panel.SetActive(false);
+            break ;
+
+            case 2:
+                camera1.transform.position = new Vector3(10, 3, -16.6f);
+                txt = "lambar gambar";
+                lambo_car_panel.SetActive(true);
+                white_car_panel.SetActive(false);
+                red_car_panel.SetActive(false);
+                tesla_car_panel.SetActive(false);
+            break;
+
+            case 3:
+                camera1.transform.position = new Vector3(20, 3, -16.6f);
+                txt = "Coming Soon";
+            break;
+
+            case 4:
+                camera1.transform.position = new Vector3(30, 3, -16.6f);
+                txt = "The Trash car";
+                tesla_car_panel.SetActive(true);
+                white_car_panel.SetActive(false);
+                red_car_panel.SetActive(false);
+                lambo_car_panel.SetActive(false);
+            break;
+
+            default:
+                camera1.transform.position = new Vector3(20, 3, -16.6f);
+                txt = "Coming Soon";
+            break;
+
+        }
     }
 
 
@@ -96,27 +100,24 @@ public class Car_rotation : MonoBehaviour
     public void TeslaLockIn()
     {
         CarSelection.setCar(Cars.TeslaTruck);
-
     }
 
     public void White_buy_button()
     {
         if(scoresave.Total_Score >= 500)
         {
+            scoresave.Car_white_locked = false;
             Destroy(WhiteBuyButton);
             scoresave.Total_Score -= 500;
-            
-
         }
     }
     public void Lambo_buy_button()
     {
         if(scoresave.Total_Score >= 1200)
         {
+            scoresave.Car_lambo_locked = false;
             Destroy(LamboBuyButton);
             scoresave.Total_Score -= 1200;
-            
-
         }
     }
 
@@ -124,15 +125,9 @@ public class Car_rotation : MonoBehaviour
     {
         if (scoresave.Total_Score >= 12000)
         {
+            scoresave.Car_tesla_locked = false;
             Destroy(teslaBuyButton);
             scoresave.Total_Score -= 12000;
-
-
         }
     }
-
-
-
-
-
 }

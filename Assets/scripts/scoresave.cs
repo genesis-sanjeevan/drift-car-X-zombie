@@ -8,6 +8,10 @@ public class scoresave : ScriptableObject
 {
     [SerializeField] int current_level_score;
     [SerializeField] int total_Score;
+    public bool Car_lambo_locked  =true;
+    public bool Car_white_locked  =true;
+    public bool Car_tesla_locked  =true;
+
     
     [SerializeField] Cars player;
     
@@ -21,6 +25,7 @@ public class scoresave : ScriptableObject
         return(total_Score);
     }
 
+    
 
 
 
