@@ -3361,14 +3361,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1557117374}
         m_TargetAssemblyTypeName: sceneManagement, Assembly-CSharp
-        m_MethodName: Exit
-        m_Mode: 1
+        m_MethodName: menu_button
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: exit
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &259871863
@@ -6870,14 +6870,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1557117374}
         m_TargetAssemblyTypeName: sceneManagement, Assembly-CSharp
-        m_MethodName: Start_BUT
-        m_Mode: 1
+        m_MethodName: menu_button
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: start
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &597861827
@@ -9536,14 +9536,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1557117374}
         m_TargetAssemblyTypeName: sceneManagement, Assembly-CSharp
-        m_MethodName: garage
-        m_Mode: 1
+        m_MethodName: menu_button
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Gar_Open
+          m_StringArgument: garage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &927774569
@@ -15396,6 +15396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenu_panel: {fileID: 2057561492}
   pause_panel: {fileID: 0}
+  score: {fileID: 0}
 --- !u!114 &1557117375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20515,14 +20516,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1557117374}
         m_TargetAssemblyTypeName: sceneManagement, Assembly-CSharp
-        m_MethodName: backToHome
-        m_Mode: 1
+        m_MethodName: menu_button
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: mainmenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2137372893
